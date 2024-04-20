@@ -1,34 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kode+Mono:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap" rel="stylesheet">
-  
+const sentence = "In the heart of the bustling city, amidst the cacophony of car horns and the hustle and bustle of busy streets, a solitary figure stood, gazing up at the towering skyscraperss reached for the sky like giant sentinels guarding the metropolis.";
+let j = 0;
 
-</head>
-<body>
-    <header>
-        <div class="header" style="font-size: 40px; font-family: 'Seymour One', sans-serif; ">TypeSpeed<svg style="margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-keyboard" viewBox="0 0 16 16">
-            <path d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-            <path d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25z"/>
-          </svg>
-            </div>
-    </header>
-    <div class="content">
-        <div class="modes">Modes-section
-        </div>
-        <div class="main"></div>
-        <div class="retry">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-            </svg>
-        </div>
-    </div>
-    <footer></footer>
-    <script src="script.js"></script>
-</body> 
-</html>
+document.addEventListener('keydown', function(e){
+    console.log(e.key);
+    if (e.key === 'Backspace'){
+        backSpace();
+    } 
+    else if (e.key.length === 1 || e.key === ' '){
+        let keypressed = e.key;
+        let keyIs = document.getElementsByClassName('key')[j];
+
+        if (keyIs.textContent == keypressed){
+            keyIs.style.color = 'white';
+        }else {
+            keyIs.style.color = 'red';
+            if (keyIs.innerHTML === ' '){
+                keyIs.style.borderBottom= '1px solid red';
+            }
+        }
+        j++;
+    } 
+ 
+})
+
+function backSpace(){
+    if(j>0){
+        j--;
+        let keyIs = document.getElementsByClassName('key')[j];
+            keyIs.style.color = 'rgb(96, 95, 95)';
+            keyIs.style.removeProperty('border-bottom');
+    }
+}
+
+
+
+for (let i=0; i<sentence.length; i++){
+    let createDiv = document.createElement('div');
+    createDiv.classList.add('key');
+    createDiv.innerHTML = sentence[i];
+    document.querySelector('.main').appendChild(createDiv);
+    if (sentence[i] ===' '){
+        createDiv.classList.add('skey');
+    }
+}
+
