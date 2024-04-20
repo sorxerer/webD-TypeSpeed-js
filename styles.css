@@ -57,8 +57,16 @@ body {
 
 .key {
     max-height: 25px;
+    padding: 5px; 
+    margin: 1px; 
 }
 
 .skey {
     min-width: 15px;
 }
+.at{
+    text-decoration: underline;
+}
+
+
+  
