@@ -7,6 +7,7 @@
 body {
     background-color: #051a39;
     margin: 0;
+
 }
 
 .header {
@@ -30,10 +31,10 @@ body {
 }
 
 .modes {
-    
+    height: 40px;
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
 }
 
 .main {
@@ -48,6 +49,7 @@ body {
     justify-content: center;
     box-shadow: 1px 1px 5px 1px black;  
     row-gap: 4px;
+    /* background-color:#041a3a ; */
 }
 
 .retry {
@@ -57,7 +59,7 @@ body {
 
 .key {
     max-height: 25px;
-    padding: 5px; 
+    padding: 1px; 
     margin: 1px; 
 }
 
@@ -67,6 +69,30 @@ body {
 .at{
     text-decoration: underline;
 }
+.result{
+    background-color: transparent;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 
+    font-size: 50px;
+    font-weight: bolder;
+    border-radius: 40px;
+    box-shadow: 1px 1px 5px 1px black; 
+    color: white;
+  
+    
+}
+.resultBox{
+    display: flex;
+    justify-content: center;
+}
+.timer{
+    color: white;
+}
 
   
