@@ -1,22 +1,44 @@
-let sentence = "Sharks existed before trees and have roamed the oceans for over 400 million years..... Success is not final, failure is not fatal: It is the courage to continue that counts.";
-const Quotes = [
+
+let Quotes = [
     "Sharks existed before trees and have roamed the oceans for over 400 million years..... Success is not final, failure is not fatal: It is the courage to continue that counts.",
-    "You cannot believe in God until you believe in yourself. Strength is life, weaknesss is death. Expansion is life, contraction is death.",
-    "In the end, we will remember not the words of our enemies, but silence of our friends.",
-    "Do not dwell in the past, don't dream of the future, concentrate the mind on present.",
-    "The greatst glory in living lies not in never falling, but in rising every time we fall.",
+    "You cannot believe in God until you believe in yourself. Strength is life, weakness is death. Expansion is life, contraction is death.",
+    "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+    "Do not dwell in the past, don't dream of the future, concentrate the mind on the present.",
+    "The greatest glory in living lies not in never falling, but in rising every time we fall.",
     "In three words I can sum up everything I've learned about life: it goes on.",
-    "Success is not final, failure is not fatal: It is the courage to continue that counts."
-]
+    "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "You can observe a lot just by watching.",
+    "A house divided against itself cannot stand.",
+    "Difficulties increase the nearer we get to the goal.",
+    "Fate is in your hands and no one else's.",
+    "Be the chief but never the lord.",
+    "Nothing happens unless first we dream.",
+    "Well begun is half done.",
+    "Life is a learning experience, only if you learn.",
+    "Self-complacency is fatal to progress.",
+    "Peace comes from within. Do not seek it without.",
+    "What you give is what you get.",
+    "We can only learn to love by loving.",
+    "Life is change. Growth is optional. Choose wisely.",
+    "You'll see it when you believe it.",
+    "Today is the tomorrow we worried about yesterday."
+  ];
+  
+
+
+
 let stopWatch;
 let seconds=0;
 let correct=0;
 let wrong=0;
 let j = 0;
 let notStarted=true;
-let sessionComplete =false;
-
+let sessionComplete =false; 
+//initial quote
+let sentence= selectSentence();
 createDiv(sentence);
+
 document.addEventListener('keydown', function(e){
     // console.log(e.key); 
     if(notStarted){
@@ -32,7 +54,10 @@ document.addEventListener('keydown', function(e){
         let keypressed = e.key;
 
         if(j<sentence.length-1){
-        keyIsf.classList.add('at');}
+            //   keyIsf.style.color='yellow';
+            // keyIsf.style.borderBottom=' 2px solid grey';
+        keyIsf.classList.add('at');
+    }
       
         if (keyIs.textContent == keypressed){
             correct++;
@@ -66,6 +91,7 @@ function backSpace(){
             keyIs.style.color = 'rgb(96, 95, 95)';
             keyIs.style.removeProperty('border-bottom');
             keyIsf.classList.remove('at');
+            keyIs.classList.add('at');
             
     }
 }
@@ -103,17 +129,19 @@ document.querySelector('.bi-arrow-clockwise').addEventListener('click', function
         keys[i].classList.remove('at'); 
     }
     keys[0].classList.add('at');
-    // newAPIquote(); connect with API to get new quotes
+  
 
-    document.querySelector('.main').innerHTML='';
-    let random= Math.floor(Math.random()*6);
-    sentence=Quotes[random];
+  
+    sentence= selectSentence();
     createDiv(sentence);
 
+   
    //remove div when retry clicked
     const results = document.querySelectorAll('.result');
+    if(results.length>= 1){
     results[1].remove();  
-    results[0].remove();
+    results[0].remove();}
+
 });
 
 
@@ -131,24 +159,25 @@ function interval(){
 
 
 function typeResult(){
+    console.clear();
     sessionComplete = true;
     clearInterval(stopWatch);
     let getDiv=document.createElement('div');
     let getDivAccuracy=document.createElement('div');
     getDivAccuracy.classList.add('result');
     getDiv.classList.add('result');
-    // let epm= ((60/seconds)*correct).toFixed(0) ;
     let Accuracy= `${((correct/(wrong+correct))*100).toFixed(0)}%`;
+    
 
-
-
+   //console print
+    console.log(`Quote length: ${sentence.length}`);
     console.log(`time taken :${seconds}`);
     console.log(`wrong: ${wrong}`);
     console.log(`correct: ${correct}`);
     console.log(`Accuracy: ${Accuracy}`);
 
 
-
+   
     let wpm= (((60/seconds)*(correct))/5).toFixed(0) ;   //math logic is random and based on my own parameters
     getDiv.innerHTML= wpm;
     getDivAccuracy.innerHTML= Accuracy;
@@ -157,3 +186,8 @@ function typeResult(){
     resultbox.appendChild(getDiv);
     resultbox.appendChild(getDivAccuracy);
 }
+ function selectSentence(){
+    document.querySelector('.main').innerHTML='';
+    let random= Math.floor(Math.random()*Quotes.length);
+    return Quotes[random];
+ }
